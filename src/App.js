@@ -8,9 +8,14 @@ import IComment from './components/Comments'
 
 function App() {
   return (
-    <div>
+    <div style = {{ padding: '50px'}}>
       <FruitName />
-      <FruitType />
+      <div> 
+        <h1>Jenis Buah</h1>
+        <span style={{ display: 'flex' }}>
+          <FruitType />
+        </span>
+      </div>
       <FruitStock />
       <Komentar />
       <IComment />

@@ -1,27 +1,27 @@
 import { Fruits } from '../data'
 
 function FruitType() {
-    const FruitList = Fruits.map((Fruits) =>
-        <div key={Fruits.id}>
-            {Fruits.fruitType}
-        </div>
-    )
-
     return (
-        <div>
-            <h1>Berdasarkan Type Buah </h1>
-            <ul><strong>Buah IMPORT</strong>
-                <p>
-                    {FruitList ? 'IMPORT' : 'LOCAL'} :
-                </p>
+      <div>
+        <div style={{ display: 'flex' }}>
+            <ul><strong>IMPORT : </strong></ul>
+                {Fruits.filter(jenis => jenis.fruitType = 'IMPORT').map(filteredType => (
+            <ul>
+                {filteredType.fruitName}  
             </ul>
-            <ul><strong>Buah LOCAL</strong>
-                <p>
-                    {FruitList ? 'LOCAL' : 'IMPORT'} : 
-                </p>
-            </ul>
+        ))}
         </div>
-    )
-}
+
+        <div style={{ display: 'flex' }}>
+            <ul><strong>LOCAL : </strong></ul>
+                {Fruits.filter(jenis => jenis.fruitType = 'LOCAL').map(filteredType => (
+            <ul>
+                {filteredType.fruitName}
+            </ul>
+        ))}
+        </div>
+      </div>
+    );
+  }
 
 export default FruitType

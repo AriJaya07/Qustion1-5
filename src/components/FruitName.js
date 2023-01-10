@@ -2,7 +2,7 @@ import { Fruits } from '../data'
 
 function FruitName() {
     const FruitList = Fruits.map((Fruits) =>
-      <div>{Fruits.fruitName}</div>
+      <div>{Fruits.fruitName.toLowerCase()}</div>
     )
 
   return (
